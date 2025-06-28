@@ -10,11 +10,11 @@ RUN apt-get -qq update && apt-get -qq -y install curl bzip2 git \
     && apt-get -qq -y autoremove \
     && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /var/log/dpkg.log \
-    && conda clean --all --yes
-    && mkdir /workspace
-    && cd /workspace
-    && git clone https://github.com/VITA-Group/Q-GaLore.git
-    && cd Q-GaLore
+    && conda clean --all --yes \
+    && mkdir /workspace \
+    && cd /workspace \
+    && git clone https://github.com/VITA-Group/Q-GaLore.git \
+    && cd Q-GaLore \
     && conda env create -f environment.yml
 
 ENV PATH /opt/conda/bin:$PATH
