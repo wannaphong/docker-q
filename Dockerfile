@@ -1,6 +1,6 @@
 FROM nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu20.04
 ENV SHELL=/bin/bash
-RUN apt-get -qq update && apt-get -qq -y install curl bzip2 git \
+RUN apt-get -qq update && apt-get -qq -y install curl bzip2 git build-essential python3-dev \
     && curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /tmp/miniconda.sh \
     && bash /tmp/miniconda.sh -bfp /usr/local \
     && rm -rf /tmp/miniconda.sh \
